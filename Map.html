@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<title>Title</title>-->
+    <script src="js/Map.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=wUGDAormvw77cMORYZh15DCLVQjpqgnE"></script>
+    <!--加载鼠标绘制工具-->
+    <script type="text/javascript" src="http://api.map.baidu.com/library/DrawingManager/1.4/src/DrawingManager_min.js"></script>
+    <link rel="stylesheet" href="http://api.map.baidu.com/library/DrawingManager/1.4/src/DrawingManager_min.css" />
+    <!--加载检索信息窗口-->
+    <script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.4/src/SearchInfoWindow_min.js"></script>
+    <link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.4/src/SearchInfoWindow_min.css" />
+    <link rel="stylesheet" href="css/MapStyle.css" media="screen" type="text/css" >
+    <title>鼠标绘制工具</title>
+</head>
+<body>
+<div id="allmap" style="overflow:hidden;zoom:1;position:relative;">
+    <div id="map" style="height:100%;-webkit-transition: all 0.5s ease-in-out;transition: all 0.5s ease-in-out;"></div>
+    <div id="showPanelBtn" style="position:absolute;font-size:14px;top:50%;margin-top:-95px;right:0px;width:20px;padding:10px 10px;color:#999;cursor:pointer;text-align:center;height:170px;background:rgba(255,255,255,0.9);-webkit-transition: all 0.5s ease-in-out;transition: all 0.5s ease-in-out;font-family:'微软雅黑';font-weight:bold;">显示检索结果面板<br/><</div>
+    <div id="panelWrap" style="width:0px;position:absolute;top:0px;right:0px;height:100%;overflow:auto;-webkit-transition: all 0.5s ease-in-out;transition: all 0.5s ease-in-out;">
+        <div style="width:20px;height:200px;margin:-100px 0 0 -10px;color:#999;position:absolute;opacity:0.5;top:50%;left:50%;" id="showOverlayInfo">此处用于展示覆盖物信息</div>
+        <div id="panel" style="position:absolute;"></div>
+    </div>
+</div>
+<div id="result">
+    <dl>
+        <dt>其他</dt>
+        <dd>
+            <ul>
+                <li>
+                    <button onclick="alert(overlays.length)">已绘制图形个数</button>
+                    <!--<input type="button" value="已绘制图形个数" onclick="alert(overlays.length)"/>-->
+                    <br/> <br/>
+                    <button onclick="clearAll()">清 空 已 绘 制</button>
+                    <!--<input type="button" value="清空" onclick="clearAll()"/>-->
+                    <br/> <br/>
+                    <button onclick="" id="submit">提交</button>
+                    <!--<input type="button" value="获取最后一个覆盖物信息" id="getLastOverLay"/>-->
+                </li>
+            </ul>
+        </dd>
+    </dl>
+
+</div>
+
+</body>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/Map.js"></script>
+
+</html>
